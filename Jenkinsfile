@@ -22,7 +22,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh '''
+                bash '''
                 #!/bin/bash
                 source .venv/bin/activate
                 pytest
