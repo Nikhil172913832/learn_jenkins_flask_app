@@ -22,11 +22,14 @@ pipeline {
 
         stage('Test') {
             steps {
-                bash '''
-                #!/bin/bash
-                source .venv/bin/activate
-                pytest
+                sh '''
+                bash -c "
+                source .venv/bin/activate && \
+                pip install --upgrade pip && \
+                pip install -r requirements.txt
+                "
                 '''
+
             }
         }
 
